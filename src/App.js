@@ -1,20 +1,18 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
+import { Container, Row, Col, Button } from "react-bootstrap";
+import ModalSignUp from "./components/ModalSignUp";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 
 import logo from "./assets/images/icon.png";
 
 function App() {
+  const [modalShow, setModalShow] = React.useState(false);
+
   return (
     <>
       <Container fluid className="bg">
-        <Row>
-          <Col md={6}></Col>
-        </Row>
+       
         <Row>
           <Col className="pt-5" md={{ offset: 1 }}>
             <img src={logo} alt="" />
@@ -31,9 +29,13 @@ function App() {
         </Row>
         <Row className="ps-4">
           <Col md={{ offset: 1 }}>
-            <Button variant="flat" className="btn-signup my-5 me-4" size="lg">
+            <Button variant="flat" className="btn-signup my-5 me-4" size="lg" onClick={() => setModalShow(true)}>
               Sign Up
             </Button>
+            <ModalSignUp 
+              show={modalShow}
+              onHide={() => setModalShow(false)}
+            />
             <Button variant="flat" className="btn-signin " size="lg">
               Sign In
             </Button>
