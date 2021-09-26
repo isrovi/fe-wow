@@ -8,6 +8,7 @@ import ReadBook from "./pages/ReadBook";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
+import Transaction from "./pages/Transaction";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/detail-book" component={DetailBook} />
         <Route exact path="/read-book" component={ReadBook} />
+        <Route exact path="/transaction" component={Transaction} />
       </Switch>
     </Router>
   );
