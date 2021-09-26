@@ -4,9 +4,11 @@ import { useHistory } from "react-router-dom";
 import styles from "./ModalSignIn.module.css";
 
 export default function ModalSignIn(props) {
-    const history = useHistory();
-    function handleClick(path) {
-    history.push(path);
+  
+  let history = useHistory();
+
+  function handleClick() {
+    history.push("/home");
   }
   return (
     <Modal
@@ -22,7 +24,7 @@ export default function ModalSignIn(props) {
         <FloatingLabel
           controlId="floatingInput"
           label="Email address"
-          className="mb-3" 
+          className="mb-3"
         >
           <Form.Control type="email" placeholder="name@example.com" />
         </FloatingLabel>
@@ -33,10 +35,16 @@ export default function ModalSignIn(props) {
         >
           <Form.Control type="password" placeholder="Password" />
         </FloatingLabel>
-        <Button variant="flat" className={styles.btnContainer}>
+        <Button
+          variant="flat"
+          className={styles.btnContainer}
+          onClick={handleClick}
+        >
           Sign In
         </Button>
-        <p className="text-center align-items-center">Don't have an account ? Klik Here</p>
+        <p className="text-center align-items-center">
+          Don't have an account ? Klik <a href="#">Here</a> 
+        </p>
       </Modal.Body>
     </Modal>
   );

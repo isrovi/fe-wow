@@ -1,0 +1,11 @@
+.Sidebar {
+    width: 230px;
+}
+
+span,img{
+    vertical-align: middle;
+  }
+
+.name-font {
+  font-size: 24px;
+}
