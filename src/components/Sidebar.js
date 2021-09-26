@@ -6,14 +6,9 @@ import {
   useParams,
 } from "react-router-dom";
 import {
-  Navbar,
   Nav,
-  NavDropdown,
-  Form,
-  FormControl,
-  Button,
-  Container,
 } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import styles from "./Sidebar.module.css";
 import Logo from "../assets/images/logo.png";
 import Profil from "../assets/images/profil.png";
@@ -21,11 +16,13 @@ import User from "../assets/images/user.png";
 import Bill from "../assets/images/bill.png";
 import Logout from "../assets/images/logout.png";
 
+import Subscribe from "./Subscribe";
+
 export default function Sidebar() {
   return (
     <Router>
-      <Nav className={`${styles.Sidebar} ${"mh-100 flex-column m-4 justify-content-center align-items-center"}`} as="ul">
-        <div className="">
+      <Nav className={`${styles.Sidebar} ${"d-flex flex-column m-4 justify-content-center align-items-center"}`} as="ul">
+        
           <Nav.Item as="li">
             <Nav.Link>
               <img src={Logo} alt="" />
@@ -45,11 +42,9 @@ export default function Sidebar() {
             <Nav.Link>
               <span style={{ fontSize: "18px" }}>Not Subscribed Yet</span>
             </Nav.Link>
+            
           </Nav.Item>
           <hr />
-        </div>
-        
-        <div>
           <Nav.Item as="li">
             <Nav.Link>
               <img src={User} alt="" />
@@ -59,14 +54,16 @@ export default function Sidebar() {
             </Nav.Link>
           </Nav.Item>
           <Nav.Item as="li">
-            <Nav.Link>
+            <NavLink to="/subscribe">
               <img src={Bill} alt="" />
               <span style={{ fontSize: "25px", marginLeft: "10px" }}>
                 Subscribe
               </span>
-            </Nav.Link>
+              
+            </NavLink>
+            <hr />
           </Nav.Item>
-          <hr />
+          
           <Nav.Item as="li">
             <Nav.Link>
               <img src={Logout} alt="" />
@@ -75,13 +72,10 @@ export default function Sidebar() {
               </span>
             </Nav.Link>
           </Nav.Item>
-        </div>
       </Nav>
 
       <Switch>
-        <Route exact path="/"></Route>
-        <Route path="/about-us"></Route>
-        <Route path="/contact-us"></Route>
+        <Route exact path="/home"></Route>
       </Switch>
     </Router>
   );
