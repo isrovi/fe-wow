@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import Transaction from "./pages/Transaction";
+import AddBook from "./pages/AddBook";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route exact path="/detail-book" component={DetailBook} />
         <Route exact path="/read-book" component={ReadBook} />
         <Route exact path="/transaction" component={Transaction} />
+        <Route exact path="/add-book" component={AddBook} />
       </Switch>
     </Router>
   );
